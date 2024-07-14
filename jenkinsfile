@@ -1,0 +1,14 @@
+pipeline{
+    environment {
+        REGISTERY_CREDENTIALS = credentials('DOCKER_REGISTERY')
+        REGISTERY_URL = 'https://registery.domain.com'
+    }
+
+    stages {
+        stage('push') {
+            steps {
+                sh 'docker login $REGISTERY_URL --username $REGISTERY_CREDENTIALS_USR --password $REGISTERY_CREDENTIALS_PSW'
+            }
+        }
+    }
+}

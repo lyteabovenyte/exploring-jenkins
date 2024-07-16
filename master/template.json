@@ -22,6 +22,21 @@
     ],
     "provisioners": [
         {
+            "type": "file",
+            "source": "./script",
+            "destination": "/tmp/"
+        },
+        {
+            "type": "file",
+            "source": "./config",
+            "destination": "/tmp/"
+        },
+        {
+            "type": "file",
+            "soruce": "{{ user `ssh_key` }}",
+            "destination": "/tmp/id_rsa"
+        },
+        {
             "type": "shell",
             "script": "./setup.sh",
             "execute_command": "sudo -E -S sh '{{ .Path }}'"

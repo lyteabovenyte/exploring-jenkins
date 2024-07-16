@@ -24,7 +24,7 @@
         {
             "type": "shell",
             "script": "./setup.sh",
-            "execute_commnd": "sudo -E -S sh '{{ .Path }}'"
+            "execute_command": "sudo -E -S sh '{{ .Path }}'"
         }
     ]
 

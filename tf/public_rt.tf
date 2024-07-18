@@ -1,3 +1,5 @@
+# IGW maps the instance's private IP with an associated public or Elastic IP 
+# and then route traffic outside the subnet to the internet
 resource "aws_internet_gateway" "igw" {
     vpc_id = aws_vpc.management.id
 
